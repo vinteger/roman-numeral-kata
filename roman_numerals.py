@@ -7,4 +7,6 @@ class RomanNumerals:
             return 'II'
         elif number is 3:
             return 'III'
+        elif number is 4:
+            return 'IV'
         return ''
