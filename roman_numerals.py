@@ -1,7 +1,10 @@
 class RomanNumerals:
 
-    def encode(self, numbers):
-        if numbers is 1:
+    def encode(self, number):
+        if number is 1:
             return 'I'
-
+        elif number is 2:
+            return 'II'
+        elif number is 3:
+            return 'III'
         return ''
