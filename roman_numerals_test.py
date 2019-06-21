@@ -31,3 +31,6 @@ class EncodeTestCase(unittest.TestCase):
 
     def test_7_returns_VII(self):
         self.assertEqual('VII', self.roman_numerals.encode(7))
+
+    def test_8_returns_VIII(self):
+        self.assertEqual('VIII', self.roman_numerals.encode(8))
