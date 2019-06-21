@@ -8,7 +8,7 @@ class EncodeTestCase(unittest.TestCase):
     def setUp(self):
         self.roman_numerals = RomanNumerals()
 
-    def test_zero_returns_empty_string(self):
+    def test_0_returns_empty_string(self):
         self.assertEqual('', self.roman_numerals.encode(0))
 
     def test_1_returns_I(self):
@@ -34,3 +34,9 @@ class EncodeTestCase(unittest.TestCase):
 
     def test_8_returns_VIII(self):
         self.assertEqual('VIII', self.roman_numerals.encode(8))
+
+    def test_9_returns_IX(self):
+        self.assertEqual('IX', self.roman_numerals.encode(9))
+
+    def test_10_returns_X(self):
+        self.assertEqual('X', self.roman_numerals.encode(10))
