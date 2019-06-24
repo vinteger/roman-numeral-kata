@@ -11,13 +11,9 @@ class EncodeTestCase(unittest.TestCase):
     def test_0_returns_empty_string(self):
         self.assertEqual('', self.roman_numerals.encode(0))
 
-    def test_1_returns_I(self):
+    def test_1_through_3(self):
         self.assertEqual('I', self.roman_numerals.encode(1))
-
-    def test_2_returns_II(self):
         self.assertEqual('II', self.roman_numerals.encode(2))
-
-    def test_3_returns_III(self):
         self.assertEqual('III', self.roman_numerals.encode(3))
 
     def test_4_returns_IV(self):
@@ -26,13 +22,9 @@ class EncodeTestCase(unittest.TestCase):
     def test_5_returns_V(self):
         self.assertEqual('V', self.roman_numerals.encode(5))
 
-    def test_6_returns_VI(self):
+    def test_6_through_8(self):
         self.assertEqual('VI', self.roman_numerals.encode(6))
-
-    def test_7_returns_VII(self):
         self.assertEqual('VII', self.roman_numerals.encode(7))
-
-    def test_8_returns_VIII(self):
         self.assertEqual('VIII', self.roman_numerals.encode(8))
 
     def test_9_returns_IX(self):
@@ -40,3 +32,8 @@ class EncodeTestCase(unittest.TestCase):
 
     def test_10_returns_X(self):
         self.assertEqual('X', self.roman_numerals.encode(10))
+
+    def test_11_through_13(self):
+        self.assertEqual('XI', self.roman_numerals.encode(11))
+        self.assertEqual('XII', self.roman_numerals.encode(12))
+        self.assertEqual('XIII', self.roman_numerals.encode(13))
