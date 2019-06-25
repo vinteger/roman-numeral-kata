@@ -29,8 +29,8 @@ class RomanNumerals:
         return result
 
     def _number_between_5_and_9(self, number, result):
+        i = 5
         if 5 < number < 9:
-            i = 5
             result = FIVE
             while i < number:
                 result += ONE
@@ -46,8 +46,8 @@ class RomanNumerals:
         return result
 
     def _number_between_10_and_14(self, number, result):
+        i = 10
         if 10 < number < 14:
-            i = 10
             result = TEN
             while i < number:
                 result += ONE
