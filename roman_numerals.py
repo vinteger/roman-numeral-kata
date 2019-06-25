@@ -4,44 +4,57 @@ TEN = 'X'
 
 
 class RomanNumerals:
+    result = ''
 
     def encode(self, number):
-        result = ''
 
         if number < 40:
+            if number < 10:
+                return self._rightmost_digit_check(number)
+
             X_to_prepend = number // 10
-            second_digit = number % 10
+            rightmost_digit = number % 10
 
             if X_to_prepend:
-                result = TEN * X_to_prepend
-            result += self._second_digit_check(second_digit, result)
+                self.result = TEN * X_to_prepend
 
-        return result
+                self.result += self._rightmost_digit_check(rightmost_digit)
 
-    def _second_digit_check(self, number, result):
-        if number is 5:
-            result = FIVE
-        result = self._number_less_than_4(number, result)
+        return self.result
+
+    def _rightmost_digit_check(self, number):
+        rightmost_digit = ''
+
+        if 0 < number < 5:
+            rightmost_digit = self._rightmost_less_than_4(number)
+
         if number is 4:
-            result = ONE + FIVE
-        result = self._number_between_5_and_9(number, result)
-        if number is 9:
-            result = ONE + TEN
-        return result
+            rightmost_digit = ONE + FIVE
 
-    def _number_between_5_and_9(self, number, result):
+        if number is 5:
+            rightmost_digit = FIVE
+
+        if 5 < number < 9:
+            rightmost_digit = self._rightmost_between_5_and_9(number)
+
+        if number is 9:
+            rightmost_digit = ONE + TEN
+
+        return rightmost_digit
+
+    def _rightmost_less_than_4(self, number):
+        digit = ''
+        i = 0
+        while i < number:
+            digit += ONE
+            i += 1
+        return digit
+
+    def _rightmost_between_5_and_9(self, number):
+        digit = FIVE
         i = 5
         if 5 < number < 9:
-            result = FIVE
             while i < number:
-                result += ONE
+                digit += ONE
                 i += 1
-        return result
-
-    def _number_less_than_4(self, number, result):
-        i = 0
-        if number < 4:
-            while i < number:
-                result += ONE
-                i += 1
-        return result
+        return digit
