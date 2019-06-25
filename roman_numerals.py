@@ -8,24 +8,25 @@ class RomanNumerals:
     def encode(self, number):
         result = ''
 
+        if number < 40:
+            X_to_prepend = number // 10
+            second_digit = number % 10
+
+            if X_to_prepend:
+                result = TEN * X_to_prepend
+            result += self._second_digit_check(second_digit, result)
+
+        return result
+
+    def _second_digit_check(self, number, result):
         if number is 5:
             result = FIVE
-
-        if number is 10:
-            result = TEN
-
         result = self._number_less_than_4(number, result)
-
         if number is 4:
             result = ONE + FIVE
-
         result = self._number_between_5_and_9(number, result)
-
         if number is 9:
             result = ONE + TEN
-
-        result = self._number_between_10_and_14(number, result)
-
         return result
 
     def _number_between_5_and_9(self, number, result):
@@ -44,13 +45,3 @@ class RomanNumerals:
                 result += ONE
                 i += 1
         return result
-
-    def _number_between_10_and_14(self, number, result):
-        i = 10
-        if 10 < number < 14:
-            result = TEN
-            while i < number:
-                result += ONE
-                i += 1
-        return result
-

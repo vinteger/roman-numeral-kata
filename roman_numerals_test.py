@@ -37,6 +37,6 @@ class EncodeTestCase(unittest.TestCase):
         self.assertEqual('XI', self.roman_numerals.encode(11))
         self.assertEqual('XII', self.roman_numerals.encode(12))
         self.assertEqual('XIII', self.roman_numerals.encode(13))
-    #
-    # def test_14_returns_XIV(self):
-    #     self.assertEqual('XIV', self.roman_numerals.encode(14))
+
+    def test_14_returns_XIV(self):
+        self.assertEqual('XIV', self.roman_numerals.encode(14))
